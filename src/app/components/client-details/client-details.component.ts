@@ -11,8 +11,8 @@ import { ClientService } from 'src/app/services/client.service';
   ]
 })
 export class ClientDetailsComponent implements OnInit {
-  id: string = '';
-  client: Client[] = [];
+  id!: string;
+  client!: Client | null;
   hasBalance : boolean = true;
   showBalanceUpdateInput: boolean = false;
 
@@ -27,7 +27,20 @@ export class ClientDetailsComponent implements OnInit {
     // get id fron url
     this.id = this.route.snapshot.params['id'];
     // get client
-    this.clientService.getClient(this.id)
+    this.clientService.getClient(this.id).subscribe(
+      client => {
+        if (client != null) {
+            if (client.balance! > 0) {
+                this.hasBalance = true;
+            }
+        }
+        this.client = client;
+        console.log(client);
+      });
+  }
+
+  onDeleteClick(){
+    
   }
 
 }
