@@ -22,6 +22,8 @@ import { AngularFireAuthModule} from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { FormsModule } from '@angular/forms';
 
+import { FlashMessagesModule } from 'flash-messages-angular';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FlashMessagesModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase, 'cliente-dashboard'),
     AngularFireAuthModule,
     AngularFirestoreModule,
