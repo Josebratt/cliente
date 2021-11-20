@@ -19,7 +19,7 @@
         <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
             <div class="form-group">
                 <label for="firstName">First Name</label>
-                <input type="text" 
+                <!-- <input type="text" 
                     class="form-control" 
                     name="firstName"
                     #clientFirstName="ngModel" 
@@ -27,7 +27,7 @@
                     [(ngModel)]="client!.firstName" 
                     minlength="2" required  >
                 <div [hidden]="clientFirstName.errors?.required" class="invalid-feedback">First Name required </div>
-                <div [hidden]="clientFirstName.errors?.minlength" class="invalid-feedback">Must be at least 2 Characters </div>
+                <div [hidden]="clientFirstName.errors?.minlength" class="invalid-feedback">Must be at least 2 Characters </div> -->
             </div>
 
             <div class="form-group">
