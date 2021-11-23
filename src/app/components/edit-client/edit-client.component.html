@@ -19,6 +19,7 @@
         <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
             <div class="form-group">
                 <label for="firstName">First Name</label>
+                <input type="text" [(ngModel)]="client!.firstName">
                 <!-- <input type="text" 
                     class="form-control" 
                     name="firstName"
